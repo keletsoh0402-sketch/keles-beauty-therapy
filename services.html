@@ -3,14 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Beauty Services &amp; Prices | Kele's Beauty Therapy, Eastbank</title>
         <meta name="description" content="Hair washing, cutting and plaiting, makeup, nails and massage with prices.">
-        <title>Services | Kele's Beauty Therapy</title>
         <link rel="icon" href="images/keles-beauty-therapy-logo.jpg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <script src="js/script.js" defer></script>
+        <script src="js/services-data.js" defer></script>
+        <script src="js/services.js" defer></script>
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to main content</a>
@@ -43,86 +45,78 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" aria-labelledby="find-title">
                 <div class="container">
-                    <div class="card-grid">
-                        <article class="card" id="hair">
-                            <div class="icon" aria-hidden="true">&#128703;</div>
-                            <h3>Hair Washing</h3>
-                            <p>A relaxing wash and treatment that leaves your hair clean, soft and ready to style.</p>
-                            <div class="price">R300</div>
-                            <a href="contact.html?service=Hair+Washing#booking" class="btn btn-small">Book this</a>
-                        </article>
-                        <article class="card" id="hair-cutting">
-                            <div class="icon" aria-hidden="true">&#9986;</div>
-                            <h3>Hair Cutting</h3>
-                            <p>Trend cuts and classic styles for men, women and kids, finished to suit your face and lifestyle.</p>
-                            <div class="price">R350</div>
-                            <a href="contact.html?service=Hair+Cutting#booking" class="btn btn-small">Book this</a>
-                        </article>
-                        <article class="card" id="hair-plaiting">
-                            <div class="icon" aria-hidden="true">&#10024;</div>
-                            <h3>Hair Plaiting</h3>
-                            <p>Neat, long-lasting plaited styles. Final price depends on length and style.</p>
-                            <div class="price"><small>from</small> R500</div>
-                            <a href="contact.html?service=Hair+Plaiting#booking" class="btn btn-small">Book this</a>
-                        </article>
-                        <article class="card" id="makeup">
-                            <div class="icon" aria-hidden="true">&#128132;</div>
-                            <h3>Makeup</h3>
-                            <p>Bridal, event, photo-shoot and soft glam makeup. Bridal trial appointments available.</p>
-                            <div class="price"><small>Price on request</small></div>
-                            <a href="contact.html?service=Makeup#booking" class="btn btn-small">Book this</a>
-                        </article>
-                        <article class="card" id="nails">
-                            <div class="icon" aria-hidden="true">&#128133;</div>
-                            <h3>Nails</h3>
-                            <p>Classic manicures and pedicures, polished looks and regular nail maintenance.</p>
-                            <div class="price"><small>Price on request</small></div>
-                            <a href="contact.html?service=Nails#booking" class="btn btn-small">Book this</a>
-                        </article>
-                        <article class="card" id="massage">
-                            <div class="icon" aria-hidden="true">&#127800;</div>
-                            <h3>Massage</h3>
-                            <p>Unwind with a soothing massage that relieves tension and leaves you refreshed.</p>
-                            <div class="price">R120</div>
-                            <a href="contact.html?service=Massage#booking" class="btn btn-small">Book this</a>
-                        </article>
+                    <h2 id="find-title" class="visually-hidden">Find a service</h2>
+                    <div class="filter-bar">
+                        <form id="service-search-form" class="search-box" role="search">
+                            <label for="service-search" class="visually-hidden">Search services</label>
+                            <span class="search-icon" aria-hidden="true">&#128269;</span>
+                            <input type="search" id="service-search" name="q" placeholder="Search e.g. braids, gel, bridal..." autocomplete="off" aria-controls="service-list">
+                        </form>
+                        <div class="sort-box">
+                            <label for="service-sort">Sort by</label>
+                            <select id="service-sort">
+                                <option value="default">Recommended</option>
+                                <option value="price-asc">Price: low to high</option>
+                                <option value="price-desc">Price: high to low</option>
+                                <option value="name">Name: A to Z</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-buttons" role="group" aria-label="Filter by category">
+                        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+                        <button type="button" class="filter-btn" data-filter="hair" aria-pressed="false">Hair</button>
+                        <button type="button" class="filter-btn" data-filter="makeup" aria-pressed="false">Makeup</button>
+                        <button type="button" class="filter-btn" data-filter="nails" aria-pressed="false">Nails</button>
+                        <button type="button" class="filter-btn" data-filter="massage" aria-pressed="false">Massage</button>
+                    </div>
+
+                    <p id="service-count" class="result-count" role="status" aria-live="polite"></p>
+
+                    <div id="service-list" class="service-grid">
+                        <noscript><p>Please turn on JavaScript to browse our services, or see the price list below.</p></noscript>
+                    </div>
+
+                    <div id="no-results" class="no-results" hidden>
+                        <p class="no-results-icon" aria-hidden="true">&#128135;</p>
+                        <h3>No services found</h3>
+                        <p id="no-results-text">We couldn't find any services matching your search.</p>
+                        <p>Try a different word, such as "braids", "nails" or "massage", or ask us directly.</p>
+                        <div class="btn-group">
+                            <button type="button" id="clear-filters" class="btn btn-small">Clear search &amp; filters</button>
+                            <a href="enquiry.html" class="btn btn-outline btn-small">Ask about a service</a>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section section-pink" id="price-list">
+            <section class="section section-pink" id="price-list" aria-labelledby="price-title">
                 <div class="container">
-                    <div class="section-title">
+                    <div class="section-title" data-reveal>
                         <span class="eyebrow">Price list</span>
-                        <h2>Know before you book</h2>
+                        <h2 id="price-title">Know before you book</h2>
                     </div>
-                    <div class="table-wrap">
-                        <table>
+                    <div class="table-wrap" data-reveal>
+                        <table class="price-table">
+                            <caption class="visually-hidden">Prices and typical durations for all services</caption>
                             <thead>
-                                <tr><th scope="col">Service</th><th scope="col" style="text-align: right;">Price</th></tr>
+                                <tr><th scope="col">Service</th><th scope="col">Time</th><th scope="col" class="amount">Price</th></tr>
                             </thead>
-                            <tbody>
-                                <tr><td>Washing Hair</td><td class="amount">R300</td></tr>
-                                <tr><td>Hair Cutting</td><td class="amount">R350</td></tr>
-                                <tr><td>Hair Plaiting</td><td class="amount">From R500</td></tr>
-                                <tr><td>Massage</td><td class="amount">R120</td></tr>
-                                <tr><td>Makeup</td><td class="amount">On request</td></tr>
-                                <tr><td>Nails</td><td class="amount">On request</td></tr>
-                            </tbody>
+                            <tbody id="price-list-body"></tbody>
                         </table>
                     </div>
-                    <p class="note">Prices may vary depending on hair length, style and products used. Contact us for a quote on makeup and nails.</p>
+                    <p class="note">"From" prices depend on hair length, style and products used. Groups of 5 or more get 10% off. Use our <a href="enquiry.html">enquiry form</a> for an instant estimate.</p>
                 </div>
             </section>
 
             <section class="cta">
-                <div class="container">
+                <div class="container" data-reveal>
                     <h2>Found what you're looking for?</h2>
-                    <p>Choose a date and time that suits you.</p>
+                    <p>Get an instant estimate and check availability for your chosen date.</p>
                     <div class="btn-group">
-                        <a href="enquiry.html" class="btn">Book Appointment</a>
+                        <a href="enquiry.html" class="btn">Get a Quote</a>
                         <a href="tel:+27715311476" class="btn btn-outline">Call 071 531 1476</a>
                     </div>
                 </div>

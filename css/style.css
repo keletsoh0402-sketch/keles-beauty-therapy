@@ -1084,6 +1084,210 @@ tbody th {
     margin: 0;
 }
 
+/* ---------- Services: search, filters and cards ---------- */
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1 1 320px;
+    max-width: 520px;
+}
+
+.search-box input {
+    padding-left: 44px;
+    border-radius: 999px;
+    background-color: var(--white);
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+.sort-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-box label {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.sort-box select {
+    width: auto;
+    background-color: var(--white);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+    background-color: var(--pink);
+}
+
+.filter-btn[aria-pressed="true"] {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+.result-count {
+    font-size: 0.9rem;
+    color: var(--grey);
+    margin-bottom: 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    animation: fade-in 0.35s ease;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(27, 27, 27, 0.12);
+}
+
+.service-card img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.service-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px 22px 24px;
+}
+
+.service-card-body p {
+    color: var(--grey);
+    flex-grow: 1;
+}
+
+.service-card-body .btn {
+    align-self: flex-start;
+}
+
+.badge {
+    align-self: flex-start;
+    padding: 2px 12px;
+    margin-bottom: 10px;
+    border-radius: 999px;
+    background-color: var(--pink);
+    color: var(--gold-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.service-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 16px;
+}
+
+.service-meta .price {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+}
+
+.service-meta .duration {
+    font-size: 0.9rem;
+    color: var(--grey);
+}
+
+mark {
+    background-color: var(--pink-dark);
+    color: inherit;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+.no-results {
+    text-align: center;
+    max-width: 520px;
+    margin: 16px auto 0;
+    padding: 36px 24px;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.no-results-icon {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.no-results p {
+    color: var(--grey);
+}
+
+.no-results .btn-group {
+    justify-content: center;
+}
+
+.price-table .table-group th {
+    background-color: var(--pink);
+    color: var(--gold-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+}
+
+.price-table th.amount {
+    text-align: right;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
