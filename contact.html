@@ -3,14 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Kele's Beauty Therapy | Eastbank, Johannesburg Salon</title>
         <meta name="description" content="Book an appointment or contact Kele's Beauty Therapy on 071 531 1476.">
-        <title>Contact Us | Kele's Beauty Therapy</title>
         <link rel="icon" href="images/keles-beauty-therapy-logo.jpg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
         <script src="js/script.js" defer></script>
+        <script src="js/map.js" defer></script>
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to main content</a>
@@ -38,15 +41,15 @@
             <section class="page-banner">
                 <div class="container">
                     <span class="eyebrow">Contact Us</span>
-                    <h1>Get in Touch</h1>
-                    <p>Book an appointment, ask a question or visit us in Eastbank</p>
+                    <h1>Contact Kele's Beauty Therapy</h1>
+                    <p>Send us a message, call, or visit us in Eastbank</p>
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" aria-labelledby="details-title">
                 <div class="container contact-grid">
                     <div>
-                        <h2>Contact Details</h2>
+                        <h2 id="details-title">Contact Details</h2>
                         <ul class="info-list">
                             <li>
                                 <span class="icon" aria-hidden="true">&#128222;</span>
@@ -60,107 +63,100 @@
                                 <span class="icon" aria-hidden="true">&#128172;</span>
                                 <div><strong>Chat to us</strong><a href="https://wa.me/27715311476" target="_blank" rel="noopener">Send us a WhatsApp message</a></div>
                             </li>
+                            <li>
+                                <span class="icon" aria-hidden="true">&#128197;</span>
+                                <div><strong>Want a price or a booking?</strong><a href="enquiry.html">Use our enquiry form for an instant estimate</a></div>
+                            </li>
                         </ul>
                         <p class="open-status" data-open-status>Mon - Fri 08:00 - 19:00, Sat 08:00 - 17:00</p>
-                        <div class="table-wrap" style="margin-top: 16px;">
+                        <div class="table-wrap hours-table">
                             <table>
+                                <caption class="visually-hidden">Opening hours by day</caption>
                                 <thead>
-                                    <tr><th scope="col">Day</th><th scope="col" style="text-align: right;">Hours</th></tr>
+                                    <tr><th scope="col">Day</th><th scope="col" class="amount">Hours</th></tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-day="1"><td>Monday</td><td class="amount">08:00 - 19:00</td></tr>
-                                    <tr data-day="2"><td>Tuesday</td><td class="amount">08:00 - 19:00</td></tr>
-                                    <tr data-day="3"><td>Wednesday</td><td class="amount">08:00 - 19:00</td></tr>
-                                    <tr data-day="4"><td>Thursday</td><td class="amount">08:00 - 19:00</td></tr>
-                                    <tr data-day="5"><td>Friday</td><td class="amount">08:00 - 19:00</td></tr>
-                                    <tr data-day="6"><td>Saturday</td><td class="amount">08:00 - 17:00</td></tr>
-                                    <tr data-day="0"><td>Sunday</td><td class="amount">Closed</td></tr>
+                                    <tr data-day="1"><th scope="row">Monday</th><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="2"><th scope="row">Tuesday</th><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="3"><th scope="row">Wednesday</th><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="4"><th scope="row">Thursday</th><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="5"><th scope="row">Friday</th><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="6"><th scope="row">Saturday</th><td class="amount">08:00 - 17:00</td></tr>
+                                    <tr data-day="0"><th scope="row">Sunday</th><td class="amount">Closed</td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    <div class="form-card" id="booking">
-                        <h2>Book an Appointment</h2>
-                        <p class="note">Fill in your details and we'll open WhatsApp with your booking ready to send.</p>
-                        <form id="booking-form" novalidate>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="booking-name">Full name</label>
-                                    <input type="text" id="booking-name" name="name" autocomplete="name" required aria-describedby="name-error">
-                                    <span class="error-message" id="name-error" aria-live="polite"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="booking-phone">Phone number</label>
-                                    <input type="tel" id="booking-phone" name="phone" autocomplete="tel" placeholder="071 234 5678" required aria-describedby="phone-error">
-                                    <span class="error-message" id="phone-error" aria-live="polite"></span>
-                                </div>
-                            </div>
-                                <div class="form-group">
-                                    <label for="booking-service">Service</label>
-                                    <select id="booking-service" name="service" required aria-describedby="service-error">
-                                        <option value="">Choose a service</option>
-                                        <option value="Hair Washing">Hair Washing - R300</option>
-                                        <option value="Hair Cutting">Hair Cutting - R350</option>
-                                        <option value="Hair Plaiting">Hair Plaiting - from R500</option>
-                                        <option value="Makeup">Makeup - price on request</option>
-                                        <option value="Nails">Nails - price on request</option>
-                                        <option value="Massage">Massage - R120</option>
-                                    </select>
-                                    <span class="error-message" id="service-error" aria-live="polite"></span>
-                                </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="booking-date">Date</label>
-                                    <input type="date" id="booking-date" name="date" required aria-describedby="date-error">
-                                    <span class="error-message" id="date-error" aria-live="polite"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="booking-time">Time</label>
-                                    <input type="time" id="booking-time" name="time" min="08:00" max="18:00" step="900" required aria-describedby="time-error">
-                                    <span class="error-message" id="time-error" aria-live="polite"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="booking-notes">Notes <span class="optional">(optional)</span></label>
-                                <textarea id="booking-notes" name="notes" placeholder="E.g. style you'd like, hair length, event date"></textarea>
-                            </div>
-                            <button type="submit" class="btn">Send Booking via WhatsApp</button>
-                            <p class="form-success" role="status">Thank you! WhatsApp has opened with your booking. Press send and we'll confirm your appointment.</p>
-                        </form>
+                    <div class="form-card" id="contact">
+                        <h2>Send Us a Message</h2>
+                        <p class="note">Questions, feedback or anything else. We'll reply by email during opening hours.</p>
+                        <!-- CONTACT FORM -->
                     </div>
                 </div>
             </section>
 
-            <section class="section section-pink">
-                <div class="container contact-grid">
-                    <div class="form-card">
-                        <h2>Send an Enquiry</h2>
-                        <p class="note">Have a question about a service or price? Ask us here.</p>
-                        <form id="enquiry-form" novalidate>
-                                <div class="form-group">
-                                    <label for="enquiry-name">Name</label>
-                                    <input type="text" id="enquiry-name" name="name" autocomplete="name" required aria-describedby="enquiry-name-error">
-                                    <span class="error-message" id="enquiry-name-error" aria-live="polite"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="enquiry-email">Email <span class="optional">(optional)</span></label>
-                                    <input type="email" id="enquiry-email" name="email" autocomplete="email" aria-describedby="enquiry-email-error">
-                                    <span class="error-message" id="enquiry-email-error" aria-live="polite"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="enquiry-message">Message</label>
-                                    <textarea id="enquiry-message" name="message" required aria-describedby="enquiry-message-error"></textarea>
-                                    <span class="error-message" id="enquiry-message-error" aria-live="polite"></span>
-                                </div>
-                            <button type="submit" class="btn">Send Enquiry via WhatsApp</button>
-                            <p class="form-success" role="status">Thank you! WhatsApp has opened with your message. Press send and we'll reply as soon as we can.</p>
-                        </form>
+            <section class="section section-pink" aria-labelledby="map-title">
+                <div class="container">
+                    <div class="section-title" data-reveal>
+                        <span class="eyebrow">Find us</span>
+                        <h2 id="map-title">Visit the Salon</h2>
+                        <p>We're at 772 Starling Crescent, Eastbank, right next to Eastbank Clinic. Click the gold pin for directions.</p>
                     </div>
-                    <div>
-                        <h2>Find Us</h2>
-                        <p>We're at 772 Starling Crescent, Eastbank, right next to Eastbank Clinic.</p>
-                        <iframe class="map" title="Map showing Kele's Beauty Therapy in Eastbank, Johannesburg" src="https://maps.google.com/maps?q=772%20Starling%20Crescent%2C%20Eastbank%2C%20Johannesburg&amp;output=embed" loading="lazy"></iframe>
+                    <div class="map-wrap">
+                        <div id="salon-map" class="map" role="region" aria-label="Interactive map showing Kele's Beauty Therapy at 772 Starling Crescent, Eastbank, Johannesburg"></div>
+                        <p id="map-hint" class="map-hint">Click the map to zoom with your mouse wheel. Drag to move around.</p>
+                    </div>
+                    <div class="btn-group map-actions">
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-26.10833,28.11306" class="btn" target="_blank" rel="noopener">Get Directions (Google Maps)</a>
+                        <a href="https://www.openstreetmap.org/?mlat=-26.10833&amp;mlon=28.11306#map=17/-26.10833/28.11306" class="btn btn-outline" target="_blank" rel="noopener">Open in OpenStreetMap</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="faq-title">
+                <div class="container">
+                    <div class="section-title" data-reveal>
+                        <span class="eyebrow">Good to know</span>
+                        <h2 id="faq-title">Frequently Asked Questions</h2>
+                    </div>
+                    <div class="accordion" data-reveal>
+                        <div class="accordion-item">
+                            <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">Do I need to book in advance?</button></h3>
+                            <div class="accordion-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn" hidden>
+                                <p>We recommend booking, especially for Saturdays and for longer styles like box braids. Use our <a href="enquiry.html">enquiry form</a> to check availability for your date, or WhatsApp us on 071 531 1476.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Are you open on Sundays and public holidays?</button></h3>
+                            <div class="accordion-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn" hidden>
+                                <p>We are closed on Sundays. We're open Monday to Friday from 08:00 to 19:00 and on Saturday from 08:00 to 17:00. Please contact us to check public-holiday hours.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">How long does box braiding take?</button></h3>
+                            <div class="accordion-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn" hidden>
+                                <p>Box braids usually take about 4 hours, depending on length and thickness. We recommend a morning appointment so there is plenty of time before closing.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">Why do some prices say "from"?</button></h3>
+                            <div class="accordion-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn" hidden>
+                                <p>For plaiting, cornrows and nail art the final price depends on length, style and products. The "from" price is the starting price; we'll confirm the exact price before we begin.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Do you do bridal trials and group bookings?</button></h3>
+                            <div class="accordion-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn" hidden>
+                                <p>Yes. Bridal makeup includes a trial appointment, and groups of 5 or more get 10% off. Choose "Bridal or wedding party" or "Group or event booking" on the <a href="enquiry.html">enquiry form</a> for an estimate.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">How do I find the salon?</button></h3>
+                            <div class="accordion-panel" id="faq-6" role="region" aria-labelledby="faq-6-btn" hidden>
+                                <p>We're at 772 Starling Crescent, Eastbank, right next to Eastbank Clinic. Use the map above or the "Get Directions" button for turn-by-turn directions.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

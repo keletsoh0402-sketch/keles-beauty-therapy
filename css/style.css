@@ -451,6 +451,11 @@ td.amount {
     white-space: nowrap;
 }
 
+th.amount {
+    text-align: right;
+}
+
+tr.today th,
 tr.today td {
     background-color: var(--pink);
     font-weight: 600;
@@ -708,10 +713,135 @@ body.no-scroll {
 
 .map {
     width: 100%;
-    height: 300px;
-    border: 0;
+    height: 460px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: 4px solid var(--white);
+    z-index: 0;
+}
+
+.map-wrap {
+    position: relative;
+}
+
+.map-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 500;
+    margin: 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background-color: rgba(27, 27, 27, 0.8);
+    color: var(--white);
+    font-size: 0.8rem;
+    width: max-content;
+    max-width: calc(100% - 32px);
+    text-align: center;
+    pointer-events: none;
+}
+
+.map-hint[hidden] {
+    display: none;
+}
+
+.map-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.map-actions {
+    justify-content: center;
+    margin-top: 24px;
+}
+
+/* Gold "K" pin matching the brand */
+.map-pin {
+    background: none;
+    border: none;
+}
+
+.map-pin-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background-color: var(--gold);
+    border: 3px solid var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    color: var(--white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Keep the letter upright inside the rotated pin */
+.map-pin-inner span {
+    transform: rotate(45deg);
+}
+
+.leaflet-container {
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: var(--radius);
+    border-top: 4px solid var(--gold);
+}
+
+.map-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.map-popup strong {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.05rem;
+}
+
+.leaflet-container .map-popup a {
+    color: var(--gold-dark);
+}
+
+.leaflet-container .map-popup .map-popup-btn {
+    display: inline-block;
+    align-self: flex-start;
+    margin: 8px 0 4px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background-color: var(--gold);
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.map-recenter {
+    padding: 8px 14px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: var(--white);
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.map-recenter:hover {
+    color: var(--gold-dark);
+}
+
+.hours-table {
+    margin-top: 16px;
 }
 
 /* ---------- Forms ---------- */
