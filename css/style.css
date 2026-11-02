@@ -1955,3 +1955,26 @@ mark {
         padding: 10px 14px;
     }
 }
+
+/* ---------- References page ---------- */
+
+.references {
+    max-width: 900px;
+}
+
+.references h2 {
+    margin-top: 40px;
+}
+
+.references h2:first-child {
+    margin-top: 0;
+}
+
+.reference-list {
+    padding-left: 22px;
+}
+
+.reference-list li {
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
