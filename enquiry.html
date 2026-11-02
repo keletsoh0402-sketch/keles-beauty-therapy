@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book a Beauty Appointment | Kele's Beauty Therapy Enquiry</title>
+        <meta name="description" content="Enquire or book hair, makeup, nails or massage at Kele's Beauty Therapy and get an instant price estimate and availability check.">
+        <link rel="icon" href="images/keles-beauty-therapy-logo.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+        <script src="js/services-data.js" defer></script>
+        <script src="js/forms.js" defer></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
+        <header class="site-header">
+            <div class="container nav-bar">
+                <a href="index.html" class="brand">
+                    <img src="images/keles-beauty-therapy-logo.jpg" alt="Kele's Beauty Therapy logo" width="325" height="233">
+                </a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="visually-hidden">Menu</span>
+                </button>
+                <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="enquiry.html" class="btn btn-small" aria-current="page">Book &amp; Enquire</a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="page-banner">
+                <div class="container">
+                    <span class="eyebrow">Book &amp; Enquire</span>
+                    <h1>Book an Appointment or Get a Quote</h1>
+                    <p>Tell us what you'd like and get an instant estimate and availability check</p>
+                </div>
+            </section>
+
+            <section class="section" aria-label="Enquiry form">
+                <div class="container enquiry-layout">
+                    <div>
+                        <section id="enquiry-result" class="result-card" hidden aria-live="polite" aria-labelledby="enquiry-result-title"></section>
+
+                        <div class="form-card">
+                            <h2>Your Enquiry</h2>
+                            <p class="note">Fields marked <span class="required" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+                            <form id="enquiry-form" novalidate>
+                                <div class="form-errors" role="alert" tabindex="-1" hidden></div>
+
+                                <fieldset>
+                                    <legend>Your details</legend>
+                                    <div class="form-group">
+                                        <label for="enquiry-name">Full name <span class="required" aria-hidden="true">*</span></label>
+                                        <input type="text" id="enquiry-name" name="name" autocomplete="name" maxlength="80" required aria-describedby="enquiry-name-error">
+                                        <span class="error-message" id="enquiry-name-error"></span>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="enquiry-email">Email address <span class="required" aria-hidden="true">*</span></label>
+                                            <input type="email" id="enquiry-email" name="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="enquiry-email-error">
+                                            <span class="error-message" id="enquiry-email-error"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="enquiry-phone">Phone number <span class="required" aria-hidden="true">*</span></label>
+                                            <input type="tel" id="enquiry-phone" name="phone" autocomplete="tel" placeholder="071 234 5678" required aria-describedby="enquiry-phone-hint enquiry-phone-error">
+                                            <span class="field-hint" id="enquiry-phone-hint">South African mobile or landline</span>
+                                            <span class="error-message" id="enquiry-phone-error"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>Your appointment</legend>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="enquiry-type">Enquiry type <span class="required" aria-hidden="true">*</span></label>
+                                            <select id="enquiry-type" name="type" required aria-describedby="enquiry-type-error">
+                                                <option value="">Choose an enquiry type</option>
+                                                <option value="booking">Book an appointment</option>
+                                                <option value="bridal">Bridal or wedding party</option>
+                                                <option value="group">Group or event booking</option>
+                                                <option value="quote">Price quote</option>
+                                                <option value="general">General question</option>
+                                            </select>
+                                            <span class="error-message" id="enquiry-type-error"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="enquiry-service">Service <span class="required" aria-hidden="true">*</span></label>
+                                            <select id="enquiry-service" name="service" required aria-describedby="enquiry-service-error">
+                                                <option value="">Choose a service</option>
+                                            </select>
+                                            <span class="error-message" id="enquiry-service-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row form-row-3">
+                                        <div class="form-group">
+                                            <label for="enquiry-date">Preferred date <span class="required" aria-hidden="true">*</span></label>
+                                            <input type="date" id="enquiry-date" name="date" required aria-describedby="enquiry-date-hint enquiry-date-error">
+                                            <span class="field-hint" id="enquiry-date-hint">Mon - Sat, closed Sundays</span>
+                                            <span class="error-message" id="enquiry-date-error"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="enquiry-time">Preferred time <span class="required" aria-hidden="true">*</span></label>
+                                            <select id="enquiry-time" name="timeSlot" required aria-describedby="enquiry-time-error">
+                                                <option value="">Choose a time</option>
+                                                <option value="morning">Morning (08:00 - 12:00)</option>
+                                                <option value="afternoon">Afternoon (12:00 - 16:00)</option>
+                                                <option value="late">Late afternoon (from 16:00)</option>
+                                            </select>
+                                            <span class="error-message" id="enquiry-time-error"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="enquiry-people">Number of people <span class="required" aria-hidden="true">*</span></label>
+                                            <input type="number" id="enquiry-people" name="people" min="1" max="20" step="1" value="1" inputmode="numeric" required aria-describedby="enquiry-people-hint enquiry-people-error">
+                                            <span class="field-hint" id="enquiry-people-hint">5 or more: 10% off</span>
+                                            <span class="error-message" id="enquiry-people-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="enquiry-message">Message <span class="required" aria-hidden="true">*</span></label>
+                                        <textarea id="enquiry-message" name="message" minlength="20" maxlength="1000" required placeholder="E.g. the style you'd like, hair length, event date or any questions" aria-describedby="enquiry-message-count enquiry-message-error"></textarea>
+                                        <span class="field-hint" id="enquiry-message-count" aria-live="polite"></span>
+                                        <span class="error-message" id="enquiry-message-error"></span>
+                                    </div>
+                                </fieldset>
+
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="enquiry-consent" name="consent" required aria-describedby="enquiry-consent-error">
+                                    <label for="enquiry-consent">I agree that Kele's Beauty Therapy may contact me by phone, WhatsApp or email about this enquiry. <span class="required" aria-hidden="true">*</span></label>
+                                    <span class="error-message" id="enquiry-consent-error"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-block">Get My Estimate</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <aside class="enquiry-aside" aria-labelledby="how-title">
+                        <div class="statement">
+                            <h2 id="how-title" class="h3">How it works</h2>
+                            <ol class="steps">
+                                <li>Choose your service, date, time and number of people.</li>
+                                <li>Get an instant estimated cost and availability check.</li>
+                                <li>Send it to us on WhatsApp and Kele will confirm your booking.</li>
+                            </ol>
+                        </div>
+                        <div class="statement">
+                            <h2 class="h3">Good to know</h2>
+                            <ul class="check-list">
+                                <li>Groups of 5 or more get 10% off</li>
+                                <li>Bridal makeup includes a trial</li>
+                                <li>Box braids take about 4 hours, so book a morning slot</li>
+                                <li>Closed on Sundays</li>
+                            </ul>
+                            <p class="note">Just have a quick question? Use our <a href="contact.html">contact form</a>.</p>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <h2 class="footer-heading">Kele's Beauty Therapy</h2>
+                        <p>Define your beauty, designed with passion. Hair, makeup, nails and massage in Eastbank, Johannesburg since 2022.</p>
+                    </div>
+                    <nav aria-label="Footer navigation">
+                        <h2 class="footer-heading">Explore</h2>
+                        <ul class="footer-links">
+                            <li><a href="services.html">Services &amp; prices</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="enquiry.html">Book &amp; enquire</a></li>
+                            <li><a href="contact.html">Contact &amp; directions</a></li>
+                            <li><a href="references.html">References &amp; image credits</a></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <h2 class="footer-heading">Opening Hours</h2>
+                        <ul class="footer-hours">
+                            <li><span>Monday - Friday</span><span>08:00 - 19:00</span></li>
+                            <li><span>Saturday</span><span>08:00 - 17:00</span></li>
+                            <li><span>Sunday</span><span>Closed</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="footer-heading">Visit Us</h2>
+                        <address>
+                            772 Starling Crescent, Eastbank, Johannesburg<br>
+                            (Next to Eastbank Clinic)<br>
+                            <a href="tel:+27715311476">071 531 1476</a>
+                        </address>
+                    </div>
+                </div>
+                <p class="footer-bottom">&copy; <span data-year>2026</span> Kele's Beauty Therapy &middot; ST10533676 &middot; <a href="references.html">References</a></p>
+            </div>
+        </footer>
+
+        <button class="back-to-top" type="button" aria-label="Back to top" hidden>&uarr;</button>
+    </body>
+</html>
