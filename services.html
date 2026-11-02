@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Hair washing, cutting and plaiting, makeup, nails and massage with prices.">
+        <title>Services | Kele's Beauty Therapy</title>
+        <link rel="icon" href="images/logo.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav-bar">
+                <a href="home.html" class="brand">
+                    <img src="images/logo.jpg" alt="Kele's Beauty Therapy logo" width="246" height="64">
+                </a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">&#9776;</button>
+                <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html" class="active" aria-current="page">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact Us</a>
+                    <a href="contact.html#booking" class="btn btn-small">Book Now</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-banner">
+                <div class="container">
+                    <span class="eyebrow">Services</span>
+                    <h1>Our Services &amp; Prices</h1>
+                    <p>Hair, makeup, nails and massage under one roof</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="card-grid">
+                        <article class="card" id="hair">
+                            <div class="icon" aria-hidden="true">&#128703;</div>
+                            <h3>Hair Washing</h3>
+                            <p>A relaxing wash and treatment that leaves your hair clean, soft and ready to style.</p>
+                            <div class="price">R300</div>
+                            <a href="contact.html?service=Hair+Washing#booking" class="btn btn-small">Book this</a>
+                        </article>
+                        <article class="card" id="hair-cutting">
+                            <div class="icon" aria-hidden="true">&#9986;</div>
+                            <h3>Hair Cutting</h3>
+                            <p>Trend cuts and classic styles for men, women and kids, finished to suit your face and lifestyle.</p>
+                            <div class="price">R350</div>
+                            <a href="contact.html?service=Hair+Cutting#booking" class="btn btn-small">Book this</a>
+                        </article>
+                        <article class="card" id="hair-plaiting">
+                            <div class="icon" aria-hidden="true">&#10024;</div>
+                            <h3>Hair Plaiting</h3>
+                            <p>Neat, long-lasting plaited styles. Final price depends on length and style.</p>
+                            <div class="price"><small>from</small> R500</div>
+                            <a href="contact.html?service=Hair+Plaiting#booking" class="btn btn-small">Book this</a>
+                        </article>
+                        <article class="card" id="makeup">
+                            <div class="icon" aria-hidden="true">&#128132;</div>
+                            <h3>Makeup</h3>
+                            <p>Bridal, event, photo-shoot and soft glam makeup. Bridal trial appointments available.</p>
+                            <div class="price"><small>Price on request</small></div>
+                            <a href="contact.html?service=Makeup#booking" class="btn btn-small">Book this</a>
+                        </article>
+                        <article class="card" id="nails">
+                            <div class="icon" aria-hidden="true">&#128133;</div>
+                            <h3>Nails</h3>
+                            <p>Classic manicures and pedicures, polished looks and regular nail maintenance.</p>
+                            <div class="price"><small>Price on request</small></div>
+                            <a href="contact.html?service=Nails#booking" class="btn btn-small">Book this</a>
+                        </article>
+                        <article class="card" id="massage">
+                            <div class="icon" aria-hidden="true">&#127800;</div>
+                            <h3>Massage</h3>
+                            <p>Unwind with a soothing massage that relieves tension and leaves you refreshed.</p>
+                            <div class="price">R120</div>
+                            <a href="contact.html?service=Massage#booking" class="btn btn-small">Book this</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-pink" id="price-list">
+                <div class="container">
+                    <div class="section-title">
+                        <span class="eyebrow">Price list</span>
+                        <h2>Know before you book</h2>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr><th scope="col">Service</th><th scope="col" style="text-align: right;">Price</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Washing Hair</td><td class="amount">R300</td></tr>
+                                <tr><td>Hair Cutting</td><td class="amount">R350</td></tr>
+                                <tr><td>Hair Plaiting</td><td class="amount">From R500</td></tr>
+                                <tr><td>Massage</td><td class="amount">R120</td></tr>
+                                <tr><td>Makeup</td><td class="amount">On request</td></tr>
+                                <tr><td>Nails</td><td class="amount">On request</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="note">Prices may vary depending on hair length, style and products used. Contact us for a quote on makeup and nails.</p>
+                </div>
+            </section>
+
+            <section class="cta">
+                <div class="container">
+                    <h2>Found what you're looking for?</h2>
+                    <p>Choose a date and time that suits you.</p>
+                    <div class="btn-group">
+                        <a href="contact.html#booking" class="btn">Book Appointment</a>
+                        <a href="tel:+27715311476" class="btn btn-outline">Call 071 531 1476</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <h3>Kele's Beauty Therapy</h3>
+                        <p>Define your beauty, designed with passion. Hair, makeup, nails and massage in Eastbank, Johannesburg since 2022.</p>
+                    </div>
+                    <div>
+                        <h3>Opening Hours</h3>
+                        <ul class="footer-hours">
+                            <li><span>Monday - Friday</span><span>08:00 - 19:00</span></li>
+                            <li><span>Saturday</span><span>08:00 - 17:00</span></li>
+                            <li><span>Sunday</span><span>Closed</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Visit Us</h3>
+                        <p>
+                            772 Starling Crescent, Eastbank, Johannesburg<br>
+                            (Next to Eastbank Clinic)<br>
+                            <a href="tel:+27715311476">071 531 1476</a>
+                        </p>
+                    </div>
+                </div>
+                <p class="footer-bottom">&copy; <span data-year>2026</span> Kele's Beauty Therapy &middot; ST10533676 &middot; DISD1</p>
+            </div>
+        </footer>
+    </body>
+</html>

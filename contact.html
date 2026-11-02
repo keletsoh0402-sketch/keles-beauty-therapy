@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Book an appointment or contact Kele's Beauty Therapy on 071 531 1476.">
+        <title>Contact Us | Kele's Beauty Therapy</title>
+        <link rel="icon" href="images/logo.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav-bar">
+                <a href="home.html" class="brand">
+                    <img src="images/logo.jpg" alt="Kele's Beauty Therapy logo" width="246" height="64">
+                </a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">&#9776;</button>
+                <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html" class="active" aria-current="page">Contact Us</a>
+                    <a href="contact.html#booking" class="btn btn-small">Book Now</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-banner">
+                <div class="container">
+                    <span class="eyebrow">Contact Us</span>
+                    <h1>Get in Touch</h1>
+                    <p>Book an appointment, ask a question or visit us in Eastbank</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container contact-grid">
+                    <div>
+                        <h2>Contact Details</h2>
+                        <ul class="info-list">
+                            <li>
+                                <span class="icon" aria-hidden="true">&#128222;</span>
+                                <div><strong>Phone / WhatsApp</strong><a href="tel:+27715311476">071 531 1476</a></div>
+                            </li>
+                            <li>
+                                <span class="icon" aria-hidden="true">&#128205;</span>
+                                <div><strong>Address</strong>772 Starling Crescent, Eastbank, Johannesburg<br>(Next to Eastbank Clinic)</div>
+                            </li>
+                            <li>
+                                <span class="icon" aria-hidden="true">&#128172;</span>
+                                <div><strong>Chat to us</strong><a href="https://wa.me/27715311476" target="_blank" rel="noopener">Send us a WhatsApp message</a></div>
+                            </li>
+                        </ul>
+                        <p class="open-status" data-open-status>Mon - Fri 08:00 - 19:00, Sat 08:00 - 17:00</p>
+                        <div class="table-wrap" style="margin-top: 16px;">
+                            <table>
+                                <thead>
+                                    <tr><th scope="col">Day</th><th scope="col" style="text-align: right;">Hours</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-day="1"><td>Monday</td><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="2"><td>Tuesday</td><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="3"><td>Wednesday</td><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="4"><td>Thursday</td><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="5"><td>Friday</td><td class="amount">08:00 - 19:00</td></tr>
+                                    <tr data-day="6"><td>Saturday</td><td class="amount">08:00 - 17:00</td></tr>
+                                    <tr data-day="0"><td>Sunday</td><td class="amount">Closed</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-card" id="booking">
+                        <h2>Book an Appointment</h2>
+                        <p class="note">Fill in your details and we'll open WhatsApp with your booking ready to send.</p>
+                        <form id="booking-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="booking-name">Full name</label>
+                                    <input type="text" id="booking-name" name="name" autocomplete="name" required aria-describedby="name-error">
+                                    <span class="error-message" id="name-error" aria-live="polite"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="booking-phone">Phone number</label>
+                                    <input type="tel" id="booking-phone" name="phone" autocomplete="tel" placeholder="071 234 5678" required aria-describedby="phone-error">
+                                    <span class="error-message" id="phone-error" aria-live="polite"></span>
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <label for="booking-service">Service</label>
+                                    <select id="booking-service" name="service" required aria-describedby="service-error">
+                                        <option value="">Choose a service</option>
+                                        <option value="Hair Washing">Hair Washing - R300</option>
+                                        <option value="Hair Cutting">Hair Cutting - R350</option>
+                                        <option value="Hair Plaiting">Hair Plaiting - from R500</option>
+                                        <option value="Makeup">Makeup - price on request</option>
+                                        <option value="Nails">Nails - price on request</option>
+                                        <option value="Massage">Massage - R120</option>
+                                    </select>
+                                    <span class="error-message" id="service-error" aria-live="polite"></span>
+                                </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="booking-date">Date</label>
+                                    <input type="date" id="booking-date" name="date" required aria-describedby="date-error">
+                                    <span class="error-message" id="date-error" aria-live="polite"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="booking-time">Time</label>
+                                    <input type="time" id="booking-time" name="time" min="08:00" max="18:00" step="900" required aria-describedby="time-error">
+                                    <span class="error-message" id="time-error" aria-live="polite"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-notes">Notes <span class="optional">(optional)</span></label>
+                                <textarea id="booking-notes" name="notes" placeholder="E.g. style you'd like, hair length, event date"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Booking via WhatsApp</button>
+                            <p class="form-success" role="status">Thank you! WhatsApp has opened with your booking. Press send and we'll confirm your appointment.</p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-pink">
+                <div class="container contact-grid">
+                    <div class="form-card">
+                        <h2>Send an Enquiry</h2>
+                        <p class="note">Have a question about a service or price? Ask us here.</p>
+                        <form id="enquiry-form" novalidate>
+                                <div class="form-group">
+                                    <label for="enquiry-name">Name</label>
+                                    <input type="text" id="enquiry-name" name="name" autocomplete="name" required aria-describedby="enquiry-name-error">
+                                    <span class="error-message" id="enquiry-name-error" aria-live="polite"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-email">Email <span class="optional">(optional)</span></label>
+                                    <input type="email" id="enquiry-email" name="email" autocomplete="email" aria-describedby="enquiry-email-error">
+                                    <span class="error-message" id="enquiry-email-error" aria-live="polite"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-message">Message</label>
+                                    <textarea id="enquiry-message" name="message" required aria-describedby="enquiry-message-error"></textarea>
+                                    <span class="error-message" id="enquiry-message-error" aria-live="polite"></span>
+                                </div>
+                            <button type="submit" class="btn">Send Enquiry via WhatsApp</button>
+                            <p class="form-success" role="status">Thank you! WhatsApp has opened with your message. Press send and we'll reply as soon as we can.</p>
+                        </form>
+                    </div>
+                    <div>
+                        <h2>Find Us</h2>
+                        <p>We're at 772 Starling Crescent, Eastbank, right next to Eastbank Clinic.</p>
+                        <iframe class="map" title="Map showing Kele's Beauty Therapy in Eastbank, Johannesburg" src="https://maps.google.com/maps?q=772%20Starling%20Crescent%2C%20Eastbank%2C%20Johannesburg&amp;output=embed" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <h3>Kele's Beauty Therapy</h3>
+                        <p>Define your beauty, designed with passion. Hair, makeup, nails and massage in Eastbank, Johannesburg since 2022.</p>
+                    </div>
+                    <div>
+                        <h3>Opening Hours</h3>
+                        <ul class="footer-hours">
+                            <li><span>Monday - Friday</span><span>08:00 - 19:00</span></li>
+                            <li><span>Saturday</span><span>08:00 - 17:00</span></li>
+                            <li><span>Sunday</span><span>Closed</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Visit Us</h3>
+                        <p>
+                            772 Starling Crescent, Eastbank, Johannesburg<br>
+                            (Next to Eastbank Clinic)<br>
+                            <a href="tel:+27715311476">071 531 1476</a>
+                        </p>
+                    </div>
+                </div>
+                <p class="footer-bottom">&copy; <span data-year>2026</span> Kele's Beauty Therapy &middot; ST10533676 &middot; DISD1</p>
+            </div>
+        </footer>
+    </body>
+</html>
