@@ -270,33 +270,6 @@ function initYear() {
     });
 }
 
-/* ---------- Gallery lightbox ---------- */
-
-function initLightbox() {
-    const lightbox = document.getElementById("lightbox");
-    if (!lightbox) return;
-
-    const image = lightbox.querySelector("img");
-    const caption = lightbox.querySelector("p");
-
-    document.querySelectorAll(".gallery-item button").forEach((button) => {
-        button.addEventListener("click", () => {
-            const thumbnail = button.querySelector("img");
-            image.src = thumbnail.src;
-            image.alt = thumbnail.alt;
-            caption.textContent = button.closest("figure").querySelector("figcaption").textContent;
-            lightbox.showModal();
-        });
-    });
-
-    lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
-
-    // Close when clicking the dark backdrop
-    lightbox.addEventListener("click", (event) => {
-        if (event.target === lightbox) lightbox.close();
-    });
-}
-
 /* ---------- Form helpers ---------- */
 
 function setError(field, message) {
@@ -469,7 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initAccordion();
     initOpeningHours();
     initYear();
-    initLightbox();
     initBookingForm();
     initEnquiryForm();
 });

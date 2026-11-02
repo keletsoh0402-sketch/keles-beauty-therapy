@@ -3,14 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Braids, Makeup &amp; Nails Gallery | Kele's Beauty Therapy</title>
         <meta name="description" content="Photos of hairstyles and beauty work by Kele's Beauty Therapy.">
-        <title>Gallery | Kele's Beauty Therapy</title>
         <link rel="icon" href="images/keles-beauty-therapy-logo.jpg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <script src="js/script.js" defer></script>
+        <script src="js/gallery.js" defer></script>
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to main content</a>
@@ -38,38 +39,131 @@
             <section class="page-banner">
                 <div class="container">
                     <span class="eyebrow">Gallery</span>
-                    <h1>Our Work</h1>
-                    <p>A look at some of the styles created at Kele's Beauty Therapy</p>
+                    <h1>Style Inspiration Gallery</h1>
+                    <p>Braids, cornrows, makeup, nails and relaxation ideas for your next visit</p>
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" aria-labelledby="gallery-title">
                 <div class="container">
-                    <div class="gallery-grid">
-                        <figure class="gallery-item">
-                            <button type="button" aria-label="Enlarge photo: Red box braids">
-                                <img src="images/gallery/thumbs/red-box-braids-being-plaited-thumb.webp" alt="Stylist plaiting long red box braids" width="600" height="400" loading="lazy">
-                            </button>
-                            <figcaption>Red box braids</figcaption>
-                        </figure>
-                        <!-- To add a photo: copy a <figure class="gallery-item"> block above and change the image and caption -->
+                    <h2 id="gallery-title" class="visually-hidden">Photos</h2>
+                    <div class="filter-buttons" role="group" aria-label="Filter photos by category">
+                        <button type="button" class="filter-btn" data-gallery-filter="all" aria-pressed="true">All</button>
+                        <button type="button" class="filter-btn" data-gallery-filter="hair" aria-pressed="false">Hair</button>
+                        <button type="button" class="filter-btn" data-gallery-filter="makeup" aria-pressed="false">Makeup</button>
+                        <button type="button" class="filter-btn" data-gallery-filter="nails" aria-pressed="false">Nails</button>
+                        <button type="button" class="filter-btn" data-gallery-filter="massage" aria-pressed="false">Spa &amp; Salon</button>
                     </div>
-                    <p class="note">Tap a photo to enlarge it.</p>
+                    <p class="result-count" id="gallery-count" role="status" aria-live="polite"></p>
+
+                    <div class="gallery-grid">
+                        <figure class="gallery-item" data-category="hair">
+                            <button type="button" data-full="images/gallery/red-box-braids-being-plaited.webp" data-credit="Photo: Umshushima, CC BY-SA 4.0">
+                                <img src="images/gallery/thumbs/red-box-braids-being-plaited-thumb.webp" alt="Stylist plaiting long red box braids for a client" width="600" height="400" loading="lazy">
+                            </button>
+                            <figcaption>Long red box braids <span class="gallery-tag">Hair</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="hair">
+                            <button type="button" data-full="images/gallery/zigzag-cornrow-hairstyle-plaiting.webp" data-credit="Photo: Nwonwu Uchechukwu P, CC BY-SA 4.0">
+                                <img src="images/gallery/thumbs/zigzag-cornrow-hairstyle-plaiting-thumb.webp" alt="Stylist plaiting a zigzag cornrow pattern on a client's hair" width="600" height="779" loading="lazy">
+                            </button>
+                            <figcaption>Zigzag cornrows <span class="gallery-tag">Hair</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="hair">
+                            <button type="button" data-full="images/gallery/womens-cornrow-braids-side-profile.webp" data-credit="Photo: @photosbyphab, CC0">
+                                <img src="images/gallery/thumbs/womens-cornrow-braids-side-profile-thumb.webp" alt="Woman with neat straight-back cornrow braids and clear glasses, side profile" width="600" height="750" loading="lazy">
+                            </button>
+                            <figcaption>Straight-back cornrows <span class="gallery-tag">Hair</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="hair">
+                            <button type="button" data-full="images/gallery/mens-cornrow-braids.webp" data-credit="Photo: Clem Onojeghuo, CC0">
+                                <img src="images/gallery/thumbs/mens-cornrow-braids-thumb.webp" alt="Man with neat cornrow braids, photographed from above in black and white" width="600" height="908" loading="lazy">
+                            </button>
+                            <figcaption>Men's cornrows <span class="gallery-tag">Hair</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="hair">
+                            <button type="button" data-full="images/gallery/stylist-braiding-natural-hair.webp" data-credit="Photo: Umshushima, CC BY-SA 4.0">
+                                <img src="images/gallery/thumbs/stylist-braiding-natural-hair-thumb.webp" alt="Hair stylist in a patterned dress braiding a client's natural hair" width="600" height="400" loading="lazy">
+                            </button>
+                            <figcaption>Braiding natural hair <span class="gallery-tag">Hair</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="hair">
+                            <button type="button" data-full="images/gallery/hair-washing-at-salon-basin.webp" data-credit="Photo: Hair Spies, CC BY 2.0">
+                                <img src="images/gallery/thumbs/hair-washing-at-salon-basin-thumb.webp" alt="Stylist washing a client's hair at a salon basin" width="600" height="704" loading="lazy">
+                            </button>
+                            <figcaption>Wash and condition <span class="gallery-tag">Hair</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="makeup">
+                            <button type="button" data-full="images/gallery/bridal-makeup-gold-eyeshadow.webp" data-credit="Photo: Otomeonoge, CC BY-SA 4.0">
+                                <img src="images/gallery/thumbs/bridal-makeup-gold-eyeshadow-thumb.webp" alt="Makeup artist applying gold eyeshadow to a bride wearing a gold floral headpiece" width="600" height="400" loading="lazy">
+                            </button>
+                            <figcaption>Bridal glam with gold eyeshadow <span class="gallery-tag">Makeup</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="makeup">
+                            <button type="button" data-full="images/gallery/makeup-artist-applying-makeup.webp" data-credit="Photo: Yemi festus, CC BY-SA 4.0">
+                                <img src="images/gallery/thumbs/makeup-artist-applying-makeup-thumb.webp" alt="Makeup artist applying foundation to a client wearing a head wrap" width="600" height="400" loading="lazy">
+                            </button>
+                            <figcaption>Event makeup application <span class="gallery-tag">Makeup</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="nails">
+                            <button type="button" data-full="images/gallery/french-tip-nail-manicure.webp" data-credit="Photo: Kamali mohan kumar, CC BY-SA 4.0">
+                                <img src="images/gallery/thumbs/french-tip-nail-manicure-thumb.webp" alt="Hand with a classic white French tip manicure and a silver ring" width="600" height="741" loading="lazy">
+                            </button>
+                            <figcaption>Classic French tips <span class="gallery-tag">Nails</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="nails">
+                            <button type="button" data-full="images/gallery/purple-glitter-nail-manicure.webp" data-credit="Photo: Lelê Breveglieri, CC BY 2.0">
+                                <img src="images/gallery/thumbs/purple-glitter-nail-manicure-thumb.webp" alt="Nails painted dark purple holding two bottles of glitter nail polish" width="600" height="399" loading="lazy">
+                            </button>
+                            <figcaption>Purple glitter manicure <span class="gallery-tag">Nails</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="nails">
+                            <button type="button" data-full="images/gallery/pedicure-treatment-in-salon.webp" data-credit="Photo: Sarah Ackerman, CC BY 2.0">
+                                <img src="images/gallery/thumbs/pedicure-treatment-in-salon-thumb.webp" alt="Nail technician painting a client's toenails during a pedicure" width="600" height="804" loading="lazy">
+                            </button>
+                            <figcaption>Salon pedicure <span class="gallery-tag">Nails</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="massage">
+                            <button type="button" data-full="images/gallery/facial-massage-treatment.webp" data-credit="Photo: Alvinategyeka, CC BY-SA 4.0">
+                                <img src="images/gallery/thumbs/facial-massage-treatment-thumb.webp" alt="Therapist giving a client a facial massage in a warmly lit spa room" width="600" height="401" loading="lazy">
+                            </button>
+                            <figcaption>Relaxing facial massage <span class="gallery-tag">Spa &amp; Salon</span></figcaption>
+                        </figure>
+                        <figure class="gallery-item" data-category="massage">
+                            <button type="button" data-full="images/gallery/modern-hair-salon-interior.webp" data-credit="Photo: Daderot, CC0">
+                                <img src="images/gallery/thumbs/modern-hair-salon-interior-thumb.webp" alt="Bright modern salon interior with styling chairs, mirrors and wooden floors" width="600" height="338" loading="lazy">
+                            </button>
+                            <figcaption>A calm salon space <span class="gallery-tag">Spa &amp; Salon</span></figcaption>
+                        </figure>
+                    </div>
+                    <p class="note">Tap or click a photo to enlarge it. Use the arrow keys to browse and Esc to close. Photos are licensed images used for style inspiration; see <a href="references.html">image credits</a>.</p>
                 </div>
             </section>
 
             <dialog id="lightbox" class="lightbox" aria-label="Enlarged photo">
-                <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
-                <img src="" alt="">
-                <p>Photo</p>
+                <figure class="lightbox-figure">
+                    <div class="lightbox-stage">
+                        <img src="images/gallery/thumbs/red-box-braids-being-plaited-thumb.webp" alt="" class="lightbox-image" width="1400" height="934">
+                        <span class="lightbox-spinner" aria-hidden="true"></span>
+                    </div>
+                    <figcaption>
+                        <span class="lightbox-caption"></span>
+                        <span class="lightbox-counter" aria-live="polite"></span>
+                        <small class="lightbox-credit"></small>
+                    </figcaption>
+                </figure>
+                <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+                <button type="button" class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+                <button type="button" class="lightbox-close" aria-label="Close enlarged photo">&times;</button>
             </dialog>
 
             <section class="cta">
-                <div class="container">
+                <div class="container" data-reveal>
                     <h2>Love what you see?</h2>
-                    <p>Book your appointment and let us create your next look.</p>
+                    <p>Tell us which look you like and we'll give you an instant price estimate.</p>
                     <div class="btn-group">
-                        <a href="enquiry.html" class="btn">Book Appointment</a>
+                        <a href="enquiry.html" class="btn">Book This Look</a>
+                        <a href="services.html" class="btn btn-outline">View Prices</a>
                     </div>
                 </div>
             </section>
