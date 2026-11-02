@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Kele's Beauty Therapy | Eastbank Beauty Salon Story</title>
         <meta name="description" content="The story, mission and vision of Kele's Beauty Therapy in Eastbank, Johannesburg.">
-        <title>About Us | Kele's Beauty Therapy</title>
         <link rel="icon" href="images/keles-beauty-therapy-logo.jpg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,24 +13,28 @@
         <script src="js/script.js" defer></script>
     </head>
     <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
         <header class="site-header">
             <div class="container nav-bar">
-                <a href="home.html" class="brand">
+                <a href="index.html" class="brand">
                     <img src="images/keles-beauty-therapy-logo.jpg" alt="Kele's Beauty Therapy logo" width="325" height="233">
                 </a>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">&#9776;</button>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="visually-hidden">Menu</span>
+                </button>
                 <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-                <a href="home.html">Home</a>
-                <a href="about.html" class="active" aria-current="page">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact Us</a>
-                    <a href="contact.html#booking" class="btn btn-small">Book Now</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active" aria-current="page">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="enquiry.html" class="btn btn-small">Book &amp; Enquire</a>
                 </nav>
             </div>
         </header>
 
-        <main>
+        <main id="main">
             <section class="page-banner">
                 <div class="container">
                     <span class="eyebrow">About Us</span>
@@ -39,68 +43,79 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" aria-labelledby="story-title">
                 <div class="container split">
-                    <div>
+                    <div data-reveal>
                         <span class="eyebrow">How it started</span>
-                        <h2>From a passion to a salon</h2>
+                        <h2 id="story-title">From a passion to a salon</h2>
                         <p>Kele's Beauty Therapy was founded and planned by Keletso in early March 2022. It started almost like play: Keletso never went to classes and no one taught her how to do nails, plait hair, do makeup or give a massage.</p>
                         <p>It is a skill she loves and enjoys more than any other, and that passion grew into a small business serving clients in Eastbank, Johannesburg and beyond.</p>
                         <p>Today the salon offers hair washing, cutting and plaiting, makeup, nails and massage, all in one welcoming space next to Eastbank Clinic.</p>
                     </div>
-                    <img src="images/gallery/stylist-braiding-natural-hair.webp" alt="Hair stylist braiding a client's natural hair in a salon" width="1400" height="934" loading="lazy">
+                    <img src="images/gallery/stylist-braiding-natural-hair.webp" alt="Hair stylist braiding a client's natural hair in a salon" width="1400" height="934" loading="lazy" data-reveal>
                 </div>
             </section>
 
-            <section class="section section-pink">
+            <section class="section section-pink" aria-labelledby="values-title">
                 <div class="container">
-                    <div class="section-title">
+                    <div class="section-title" data-reveal>
                         <span class="eyebrow">What drives us</span>
-                        <h2>Mission &amp; Vision</h2>
+                        <h2 id="values-title">Mission, Vision &amp; Values</h2>
                     </div>
-                    <div class="card-grid">
-                        <div class="statement">
-                            <h3>Our Mission</h3>
+                    <div class="tabs" data-tabs data-reveal>
+                        <div class="tab-list" role="tablist" aria-label="Mission, vision and values">
+                            <button class="tab" type="button" role="tab" id="tab-mission" aria-controls="panel-mission" aria-selected="true">Our Mission</button>
+                            <button class="tab" type="button" role="tab" id="tab-vision" aria-controls="panel-vision" aria-selected="false" tabindex="-1">Our Vision</button>
+                            <button class="tab" type="button" role="tab" id="tab-values" aria-controls="panel-values" aria-selected="false" tabindex="-1">Our Values</button>
+                        </div>
+                        <div class="tab-panel" role="tabpanel" id="panel-mission" aria-labelledby="tab-mission" tabindex="0">
                             <p>To empower individuals by enhancing their natural beauty through personalised and innovative beauty treatments. We are committed to providing a relaxing and luxurious experience while using high-quality products and techniques to promote self-confidence and well-being.</p>
                         </div>
-                        <div class="statement">
-                            <h3>Our Vision</h3>
+                        <div class="tab-panel" role="tabpanel" id="panel-vision" aria-labelledby="tab-vision" tabindex="0" hidden>
                             <p>To be a leading beauty salon known for exceptional service and transformative beauty experiences. We aspire to create a community where everyone feels valued and beautiful, fostering a culture of inclusivity and self-love, and to inspire our clients to embrace their unique beauty through continuous education and the latest trends.</p>
+                        </div>
+                        <div class="tab-panel" role="tabpanel" id="panel-values" aria-labelledby="tab-values" tabindex="0" hidden>
+                            <ul class="check-list">
+                                <li><strong>Personal care:</strong> every treatment is tailored to the client in the chair.</li>
+                                <li><strong>Quality:</strong> high-quality products and up-to-date techniques.</li>
+                                <li><strong>Inclusivity:</strong> a welcoming space for men, women and kids of every age.</li>
+                                <li><strong>Confidence:</strong> we want you to leave feeling as good as you look.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" aria-labelledby="serve-title">
                 <div class="container">
-                    <div class="section-title">
+                    <div class="section-title" data-reveal>
                         <span class="eyebrow">Who we serve</span>
-                        <h2>Beauty for everyone</h2>
+                        <h2 id="serve-title">Beauty for everyone</h2>
                     </div>
                     <div class="card-grid">
-                        <article class="card">
+                        <article class="card" data-reveal>
                             <h3>Hair</h3>
                             <p>Men and women looking for trend cuts, professionals who need a polished look, and kids and older adults who come in for regular maintenance.</p>
                         </article>
-                        <article class="card">
+                        <article class="card" data-reveal>
                             <h3>Makeup</h3>
                             <p>Brides, events, photo shoots and influencers, plus professional headshot makeup and soft glam or anti-ageing looks for mature clients.</p>
                         </article>
-                        <article class="card">
-                            <h3>Nails</h3>
-                            <p>Students and professionals who want polished nails, clients who love a classic mani or pedi, and brides and special-event guests.</p>
+                        <article class="card" data-reveal>
+                            <h3>Nails &amp; Massage</h3>
+                            <p>Students and professionals who want polished nails, clients who love a classic mani or pedi, and anyone who needs to relax and unwind.</p>
                         </article>
                     </div>
                 </div>
             </section>
 
             <section class="cta">
-                <div class="container">
+                <div class="container" data-reveal>
                     <h2>Come and experience it yourself</h2>
                     <p>772 Starling Crescent, Eastbank, Johannesburg (next to Eastbank Clinic)</p>
                     <div class="btn-group">
-                        <a href="contact.html#booking" class="btn">Book Appointment</a>
-                        <a href="services.html" class="btn btn-outline">See Our Services</a>
+                        <a href="enquiry.html" class="btn">Book an Appointment</a>
+                        <a href="contact.html#map-title" class="btn btn-outline">Get Directions</a>
                     </div>
                 </div>
             </section>
@@ -110,11 +125,21 @@
             <div class="container">
                 <div class="footer-grid">
                     <div>
-                        <h3>Kele's Beauty Therapy</h3>
+                        <h2 class="footer-heading">Kele's Beauty Therapy</h2>
                         <p>Define your beauty, designed with passion. Hair, makeup, nails and massage in Eastbank, Johannesburg since 2022.</p>
                     </div>
+                    <nav aria-label="Footer navigation">
+                        <h2 class="footer-heading">Explore</h2>
+                        <ul class="footer-links">
+                            <li><a href="services.html">Services &amp; prices</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="enquiry.html">Book &amp; enquire</a></li>
+                            <li><a href="contact.html">Contact &amp; directions</a></li>
+                            <li><a href="references.html">References &amp; image credits</a></li>
+                        </ul>
+                    </nav>
                     <div>
-                        <h3>Opening Hours</h3>
+                        <h2 class="footer-heading">Opening Hours</h2>
                         <ul class="footer-hours">
                             <li><span>Monday - Friday</span><span>08:00 - 19:00</span></li>
                             <li><span>Saturday</span><span>08:00 - 17:00</span></li>
@@ -122,16 +147,18 @@
                         </ul>
                     </div>
                     <div>
-                        <h3>Visit Us</h3>
-                        <p>
+                        <h2 class="footer-heading">Visit Us</h2>
+                        <address>
                             772 Starling Crescent, Eastbank, Johannesburg<br>
                             (Next to Eastbank Clinic)<br>
                             <a href="tel:+27715311476">071 531 1476</a>
-                        </p>
+                        </address>
                     </div>
                 </div>
-                <p class="footer-bottom">&copy; <span data-year>2026</span> Kele's Beauty Therapy &middot; ST10533676 &middot; DISD1</p>
+                <p class="footer-bottom">&copy; <span data-year>2026</span> Kele's Beauty Therapy &middot; ST10533676 &middot; <a href="references.html">References</a></p>
             </div>
         </footer>
+
+        <button class="back-to-top" type="button" aria-label="Back to top" hidden>&uarr;</button>
     </body>
 </html>

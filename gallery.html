@@ -13,24 +13,28 @@
         <script src="js/script.js" defer></script>
     </head>
     <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
         <header class="site-header">
             <div class="container nav-bar">
-                <a href="home.html" class="brand">
+                <a href="index.html" class="brand">
                     <img src="images/keles-beauty-therapy-logo.jpg" alt="Kele's Beauty Therapy logo" width="325" height="233">
                 </a>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">&#9776;</button>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="visually-hidden">Menu</span>
+                </button>
                 <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-                <a href="home.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="gallery.html" class="active" aria-current="page">Gallery</a>
-                <a href="contact.html">Contact Us</a>
-                    <a href="contact.html#booking" class="btn btn-small">Book Now</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="gallery.html" class="active" aria-current="page">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="enquiry.html" class="btn btn-small">Book &amp; Enquire</a>
                 </nav>
             </div>
         </header>
 
-        <main>
+        <main id="main">
             <section class="page-banner">
                 <div class="container">
                     <span class="eyebrow">Gallery</span>
@@ -65,7 +69,7 @@
                     <h2>Love what you see?</h2>
                     <p>Book your appointment and let us create your next look.</p>
                     <div class="btn-group">
-                        <a href="contact.html#booking" class="btn">Book Appointment</a>
+                        <a href="enquiry.html" class="btn">Book Appointment</a>
                     </div>
                 </div>
             </section>
@@ -75,11 +79,21 @@
             <div class="container">
                 <div class="footer-grid">
                     <div>
-                        <h3>Kele's Beauty Therapy</h3>
+                        <h2 class="footer-heading">Kele's Beauty Therapy</h2>
                         <p>Define your beauty, designed with passion. Hair, makeup, nails and massage in Eastbank, Johannesburg since 2022.</p>
                     </div>
+                    <nav aria-label="Footer navigation">
+                        <h2 class="footer-heading">Explore</h2>
+                        <ul class="footer-links">
+                            <li><a href="services.html">Services &amp; prices</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="enquiry.html">Book &amp; enquire</a></li>
+                            <li><a href="contact.html">Contact &amp; directions</a></li>
+                            <li><a href="references.html">References &amp; image credits</a></li>
+                        </ul>
+                    </nav>
                     <div>
-                        <h3>Opening Hours</h3>
+                        <h2 class="footer-heading">Opening Hours</h2>
                         <ul class="footer-hours">
                             <li><span>Monday - Friday</span><span>08:00 - 19:00</span></li>
                             <li><span>Saturday</span><span>08:00 - 17:00</span></li>
@@ -87,16 +101,18 @@
                         </ul>
                     </div>
                     <div>
-                        <h3>Visit Us</h3>
-                        <p>
+                        <h2 class="footer-heading">Visit Us</h2>
+                        <address>
                             772 Starling Crescent, Eastbank, Johannesburg<br>
                             (Next to Eastbank Clinic)<br>
                             <a href="tel:+27715311476">071 531 1476</a>
-                        </p>
+                        </address>
                     </div>
                 </div>
-                <p class="footer-bottom">&copy; <span data-year>2026</span> Kele's Beauty Therapy &middot; ST10533676 &middot; DISD1</p>
+                <p class="footer-bottom">&copy; <span data-year>2026</span> Kele's Beauty Therapy &middot; ST10533676 &middot; <a href="references.html">References</a></p>
             </div>
         </footer>
+
+        <button class="back-to-top" type="button" aria-label="Back to top" hidden>&uarr;</button>
     </body>
 </html>
