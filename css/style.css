@@ -166,11 +166,9 @@ a {
     min-height: 76px;
 }
 
-/* logo.jpg has wide white margins, so crop to the centre of the logo */
 .brand img {
-    height: 72px;
-    width: 140px;
-    object-fit: cover;
+    height: 64px;
+    width: auto;
 }
 
 .site-nav {
@@ -231,6 +229,9 @@ a {
 }
 
 .hero-image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     border-radius: 200px 200px var(--radius) var(--radius);
     box-shadow: var(--shadow);
     border: 6px solid var(--white);
@@ -749,8 +750,7 @@ textarea {
     }
 
     .brand img {
-        height: 52px;
-        width: 100px;
+        height: 50px;
     }
 
     .form-row {
