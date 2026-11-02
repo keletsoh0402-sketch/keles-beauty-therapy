@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-GITHUB-USERNAME.github.io/keles-beauty-therapy/sitemap.xml
+Sitemap: https://keletsoh0402-sketch.github.io/keles-beauty-therapy/sitemap.xml

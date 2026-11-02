@@ -2,7 +2,7 @@
 
 A responsive, multi-page website for **Kele's Beauty Therapy**, a beauty salon in Eastbank, Johannesburg, offering hair, makeup, nails and massage since 2022.
 
-**Live site:** https://YOUR-GITHUB-USERNAME.github.io/keles-beauty-therapy/ *(update after publishing, see [Deployment](#deployment-github-pages))*
+**Live site:** https://keletsoh0402-sketch.github.io/keles-beauty-therapy/ 
 
 | | |
 |---|---|
@@ -264,7 +264,7 @@ Until the ID is set, the form shows a friendly "not connected yet" message inste
 1. **Create the repository:** on GitHub click **New repository**, name it `keles-beauty-therapy`, set it to **Public**, and don't add a README.
 2. **Replace the URL placeholder** with your GitHub username (lower case) in all files:
    ```bash
-   grep -rl "YOUR-GITHUB-USERNAME" . --exclude-dir=.git | xargs sed -i '' 's/YOUR-GITHUB-USERNAME/your-username/g'
+   grep -rl "keletsoh0402-sketch" . --exclude-dir=.git | xargs sed -i '' 's/keletsoh0402-sketch/your-username/g'
    ```
    (On Windows, use VS Code's **Find and Replace in Files**: Ctrl+Shift+H.) Commit the change.
 3. **Push the code:**
